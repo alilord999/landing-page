@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+font-family: 'Quicksand', sans-serif;
+
+/* RESET & GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+body {
+    background-color: #fbfbfb; /* کمی روشن‌تر */
+    color: #1e3a8a; /* آبی تیره */
+    line-height: 1.7;
+    scroll-behavior: smooth;
+    /* *** تغییر برای حالت کل صفحه: لایه بندی باید روی body تنظیم شود *** */
+    position: relative; 
+    min-height: 100vh; /* *** اطمینان از حداقل ارتفاع 100% viewport *** */
+            /* اعمال فونت وزیرمتن (Vazirmatn) */
+            font-family: 'Vazirmatn', sans-serif; 
+        
+            /* اگر از فونت‌های استاندارد استفاده می‌کنید: */
+            /* font-family: 'Tahoma', sans-serif; */
+        }
+    
+        /* اگر فقط می‌خواهید کادر نارنجی شما فونت متفاوتی داشته باشد: */
+        .your-orange-box-class {
+            font-family: 'Vazirmatn', sans-serif;
+}
+
+/* --- PARTICLE/BUBBLE EFFECT FOR ENTIRE PAGE --- */
+#particles-js {
+    position: fixed; /* *** کلید اصلی ۱: برای ثابت ماندن روی کل صفحه *** */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* *** کلید اصلی ۲: پوشش 100% ارتفاع صفحه نمایش *** */
+    z-index: 1; /* کمترین لایه برای پس‌زمینه */
+}
+
+/* --- SECTION STYLES (Enhanced Look) --- */
+section {
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 90px 30px;
+    text-align: center;
+    background: #fff;
+    border-radius: 20px; /* کمی گردتر */
+    box-shadow: 0 10px 40px rgba(30, 58, 138, 0.1); /* سایه آبی‌رنگ ملایم */
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid #ddd; /* خط حاشیه خیلی نازک */
+    
+    /* *** تغییر برای حالت کل صفحه: محتوا باید روی حباب‌ها بیاید *** */
+    position: relative; 
+    z-index: 5; /* *** لایه بالاتر از ذرات (که z-index: 1 دارند) *** */
+}
+section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 50px rgba(249, 115, 22, 0.15); /* سایه نارنجی هنگام هاور */
+}
+
+h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1e3a8a;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #1e3a8a;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #333;
+}
+
+/* --- HERO SECTION (Animated Gradient Background) --- */
+.hero {
+    /* ترکیب قوی آبی و نارنجی در پس زمینه Hero */
+    background: linear-gradient(135deg, #1e3a8a 0%, #f97316 50%, #1e3a8a 100%);
+    color: #fff;
+    padding: 160px 30px;
+    border-radius: 40px 40px 40px 40px;
+    position: relative;
+    overflow: hidden;
+    
+    /* *** اطمینان از قرارگیری روی حباب‌ها (اگر حباب در کل صفحه است) *** */
+    z-index: 5; 
+}
+
+/* Animated Background for Bubble/Particle Effect Simulation */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero {
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+/* تنظیم رنگ متن روی Hero */
+.hero h1, .hero p, .hero .btn {
+    color: #fff;
+}
+
+
+/* --- BUTTON DESIGN (Orange Accent) --- */
+.btn {
+    display: inline-block;
+    padding: 16px 38px;
+    border-radius: 10px; /* کمی گردتر */
+    background: #f97316; /* نارنجی اصلی */
+    color: #1e3a8a; /* متن آبی تیره برای تضاد روی نارنجی */
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    z-index: 10;
+    border: none;
+}
+
+.btn:hover {
+    background: #fb923c; /* نارنجی روشن‌تر */
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(249, 115, 22, 0.4); /* سایه قوی نارنجی */
+}
+
+/* --- MORE BOX (Using Accent Color) --- */
+.more-box summary {
+    cursor: pointer;
+    display: inline-block;
+    padding: 14px 30px;
+    background: #1e3a8a; /* آبی برای پس‌زمینه خلاصه */
+    color: #fff;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.more-box summary:hover {
+    background-color: #2563eb; /* آبی کمی روشن‌تر */
+    box-shadow: 0 0 25px rgba(30, 58, 138, 0.3);
+}
+
+.more-box p {
+    margin-top: 20px;
+    color: #333;
+}
+
+/* LINKS */
+a {
+    color: #f97316; /* لینک‌ها به رنگ نارنجی */
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #1e3a8a;
+}
+
+/* *** استایل‌های بخش‌های محتوایی (مثلاً .my-section) *** */
+/* اگر می‌خواهید هر بخش همچنان یک جعبه سفید با سایه داشته باشد (حالت دوم) */
+.my-section {
+    max-width: 900px;
+    margin: 0 auto 40px auto; /* حاشیه پایین ۴۰px */
+    padding: 80px 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+    /* *** اگر حباب کل صفحه است، دیگر نیازی به position: relative و overflow: hidden در اینجا نیست *** */
+    /* اگر بخواهیم همان حالت جعبه سفید با سایه را داشته باشیم، فقط استایل‌های بصری باقی می‌ماند. */
+}
+
+/* اگر شما هنوز از تگ <div class="section-content"> برای محتوا استفاده می‌کنید، 
+   مطمئن شوید که محتوای داخل آن در لایه بالاتر قرار دارد (که در بالا تنظیم شد) */

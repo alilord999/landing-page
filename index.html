@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Freelance Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS FILE -->
+    <link rel="stylesheet" href="style.css">
+
+        <!-- ... سایر تگ‌ها و لینک‌های CSS قبلی ... -->
+        
+        <!-- لینک کردن فونت Vazirmatn از Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+        
+        <!-- اگر از فونت دیگری استفاده می‌کنید، لینک آن را اینجا قرار دهید. -->
+        
+        <!-- ... -->
+    
+    
+</head>
+
+<!-- --- تنظیمات JS برای افکت هاوس (Mouse Move) و پارتیلز --- -->
+<script>
+    // --- 1. Mouse Move Effect for Hero (Inspired by your script) ---
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.addEventListener('mousemove', e => {
+          const rect = hero.getBoundingClientRect();
+          // برای افکت نئونی روی دکمه‌ها نیز باید متغیرهای --x و --y را در CSS تعریف کنیم
+          hero.style.setProperty('--x', `${e.clientX - rect.left}px`);
+          hero.style.setProperty('--y', `${e.clientY - rect.top}px`);
+        });
+    }
+</script>
+
+<!-- 2. لینک کردن کتابخانه Particles.js -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<!-- --- پایان تنظیمات JS های ابتدایی --- -->
+
+<body>
+    <!-- **محل قرارگیری تگ حباب برای پوشش کل صفحه** -->
+    <div id="particles-js"></div>
+
+    <!-- HERO (باید لایه بالاتری نسبت به حباب داشته باشد) -->
+    <section class="hero">
+        <h1>Hi, I’m Ali </h1>
+        <h2>Freelance Web Developer</h2>
+        <p>
+            I build clean, modern, and fast websites for businesses and freelancers.
+        </p>
+        <a href="mailto:alizeinaliproject@gmail.com" class="btn">Contact Me</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <h2>About Me</h2>
+
+        <p>
+            I’m a freelance web developer focused on creating simple and effective websites.
+        </p>
+
+        <details class="more-box">
+            <summary>More about me</summary>
+
+            <p>
+                I design and develop modern landing pages for freelancers and small businesses.
+                My goal is to build websites that are clean, fast, and easy to use.
+            </p>
+
+            <p>
+                📬 Telegram: <a href="https://t.me/CoIahbardar" target="_blank">@CoIahbardar</a>
+            </p>
+        </details>
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="services">
+        <h2>My Services</h2>
+        <ul>
+            <li>Landing Page Design</li>
+            <li>Website Development</li>
+            <li>Responsive Design</li>
+            <li>Website Optimization</li>
+        </ul>
+    </section>
+
+    <!-- CONTACT (استفاده از ساختار سفارشی برای این بخش) -->
+    <section class="my-section contact-section">
+        <!-- اگر در این بخش نیز حباب می‌خواهید، باید اینجا هم تگ <div id="particles-js"> را تکرار کنید یا در CSS تنظیم کنید -->
+        <!-- اما چون ما حالت کل صفحه را فعال کردیم، دیگر نیازی به تکرار تگ حباب در هر سکشن نیست. -->
+        
+        <h2>Let's Talk</h2>
+        <p>Ready to start a project? Reach out!</p>
+        <!-- سایر محتوای تماس -->
+        <a href="mailto:alizeinaliproject@gmail.com" class="btn">Get in Touch</a>
+    </section>
+    
+    <!-- تنظیمات JS نهایی برای رندر کردن ذرات -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80, 
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": ["#1e3a8a", "#f97316", "#93c5fd", "#fdba74"], 
+                    "animation": {
+                        "enable": true,
+                        "speed": 1,
+                        "sync": true
+                    }
+                },
+                "shape": {
+                    "type": "circle", 
+                    "stroke": { "width": 0, "color": "#000000" },
+                    "polygon": { "nb_sides": 5 }
+                },
+                "opacity": {
+                    "value": 0.6,
+                    "random": true,
+                    "anim": { "enable": true, "speed": 1.5, "opacity_min": 0.1, "sync": false }
+                },
+                "size": {
+                    "value": 8, /* *** تغییر اعمال شد: از 3 به 8 *** */
+                    "random": true,
+                    "anim": { "enable": true, "speed": 4, "size_min": 1, "sync": false }
+                },
+                "line_linked": {
+                    "enable": false, 
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1.5,
+                    "direction": "top",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out", 
+                    "bounce": false,
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "bubble" 
+                    },
+                    "onclick": { "enable": false, "mode": "push" },
+                    "resize": true
+                },
+                "modes": {
+                    "bubble": {
+                        "distance": 50, /* کمی فاصله برای هاور بزرگتر */
+                        "size": 8, /* *** تغییر اعمال شد: حباب هاور نیز بزرگتر شد *** */
+                        "duration": 0.3,
+                        "opacity": 1,
+                        "speed": 3
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+        });
+    </script>
+    
+</body>
+</html>
